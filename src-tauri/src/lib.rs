@@ -1,6 +1,8 @@
+mod claude_chat;
 mod terminal;
 mod workspace;
 
+use claude_chat::{kill_claude_chat, send_claude_chat_message, spawn_claude_chat, ClaudeChatState};
 use terminal::{kill_terminal, resize_terminal, spawn_terminal, write_to_terminal, PtyState};
 use workspace::{git_diff_content, git_status, list_directory, read_file};
 
@@ -11,11 +13,15 @@ pub fn run() {
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_store::Builder::default().build())
         .manage(PtyState::default())
+        .manage(ClaudeChatState::default())
         .invoke_handler(tauri::generate_handler![
             spawn_terminal,
             write_to_terminal,
             resize_terminal,
             kill_terminal,
+            spawn_claude_chat,
+            send_claude_chat_message,
+            kill_claude_chat,
             list_directory,
             git_status,
             read_file,

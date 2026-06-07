@@ -22,7 +22,7 @@ fn exit_event(session_id: &str) -> String {
     format!("pty://exit:{session_id}")
 }
 
-fn login_shell() -> String {
+pub(crate) fn login_shell() -> String {
     std::env::var("SHELL").unwrap_or_else(|_| "/bin/zsh".to_string())
 }
 

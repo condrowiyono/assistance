@@ -9,7 +9,7 @@ import {
 import { usePanelRef } from "react-resizable-panels";
 import { TitleBar } from "@/components/layout/TitleBar";
 import { WorkspaceSidebar } from "@/components/layout/WorkspaceSidebar";
-import { TerminalPanel } from "@/components/terminal/TerminalPanel";
+import { CenterPanel } from "@/components/layout/CenterPanel";
 import { PreviewPanel } from "@/components/layout/PreviewPanel";
 import { useUIStore } from "@/store/useUIStore";
 import { useThemeStore } from "@/store/useThemeStore";
@@ -109,7 +109,7 @@ export default function App() {
 
             <ResizablePanel id="terminal-panel" className="min-w-0 bg-card">
               <div className="flex h-full min-w-0 pb-3">
-                <TerminalPanel />
+                <CenterPanel />
               </div>
             </ResizablePanel>
 
