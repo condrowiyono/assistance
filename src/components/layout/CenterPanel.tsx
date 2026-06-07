@@ -14,8 +14,8 @@ export function CenterPanel() {
   const setCenterMode = useUIStore((s) => s.setCenterMode);
 
   return (
-    <div className="flex h-full min-w-0 flex-col">
-      <header className="flex shrink-0 items-center gap-1 border-b border-border px-2 py-1.5">
+    <div className="flex h-full min-w-0 w-full flex-1 flex-col">
+      <header className="flex shrink-0 items-center gap-1 border-b border-border px-2 py-2">
         {MODES.map(({ id, label, icon: Icon }) => {
           const active = id === centerMode;
           return (

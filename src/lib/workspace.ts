@@ -20,6 +20,10 @@ export async function gitStatus(path: string): Promise<GitStatusEntry[]> {
   return invoke<GitStatusEntry[]>("git_status", { path });
 }
 
+export async function gitBranch(path: string): Promise<string> {
+  return invoke<string>("git_branch", { path });
+}
+
 export async function readFile(path: string): Promise<string> {
   return invoke<string>("read_file", { path });
 }

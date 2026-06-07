@@ -39,7 +39,7 @@ export function PreviewPanel() {
                 aria-label="Web preview"
                 title="Web preview"
                 className={cn(
-                  "flex shrink-0 items-center justify-center rounded-lg px-2.5 py-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground",
+                  "flex shrink-0 items-center justify-center rounded-lg px-2.5 py-1 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground",
                   active && "bg-accent text-primary",
                 )}
               >
@@ -54,7 +54,7 @@ export function PreviewPanel() {
             <div
               key={tab.id}
               className={cn(
-                "group flex shrink-0 items-center gap-0.5 rounded-lg py-1 pl-1 pr-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground",
+                "group flex shrink-0 items-center gap-0.5 rounded-lg py-0.5 pl-1 pr-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground",
                 active && "bg-accent text-primary",
               )}
             >

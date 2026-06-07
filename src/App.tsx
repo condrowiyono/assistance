@@ -10,6 +10,8 @@ import { usePanelRef } from "react-resizable-panels";
 import { TitleBar } from "@/components/layout/TitleBar";
 import { WorkspaceSidebar } from "@/components/layout/WorkspaceSidebar";
 import { CenterPanel } from "@/components/layout/CenterPanel";
+import { StatusBar } from "@/components/layout/StatusBar";
+import { ModalHost } from "@/components/layout/ModalHost";
 import { PreviewPanel } from "@/components/layout/PreviewPanel";
 import { useUIStore } from "@/store/useUIStore";
 import { useThemeStore } from "@/store/useThemeStore";
@@ -127,7 +129,9 @@ export default function App() {
             </ResizablePanel>
           </ResizablePanelGroup>
         </div>
+        <StatusBar />
         <Toaster position="bottom-right" closeButton />
+        <ModalHost />
       </div>
     </TooltipProvider>
   );

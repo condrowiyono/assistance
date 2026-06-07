@@ -65,7 +65,7 @@ export function FilePreview({ path, title }: FilePreviewProps) {
           readOnly: true,
           domReadOnly: true,
           minimap: { enabled: false },
-          fontSize: 13,
+          fontSize: 11,
           scrollBeyondLastLine: false,
         }}
       />

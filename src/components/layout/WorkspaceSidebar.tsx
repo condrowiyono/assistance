@@ -31,11 +31,11 @@ export function WorkspaceSidebar() {
               onClick={() => setActiveTab(tab.id)}
               aria-current={active ? "true" : undefined}
               className={cn(
-                "flex flex-1 flex-col items-center gap-1 rounded-lg px-2 py-1.5 text-[0.7rem] font-medium text-sidebar-foreground/70 transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
+                "flex flex-1 items-center justify-center gap-1.5 rounded-lg px-2 py-1 text-xs font-medium text-sidebar-foreground/70 transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
                 active && "bg-sidebar-accent text-sidebar-primary",
               )}
             >
-              <Icon className="size-4 stroke-2" />
+              <Icon className="size-3.5 shrink-0 stroke-2" />
               <span>{tab.label}</span>
             </button>
           );

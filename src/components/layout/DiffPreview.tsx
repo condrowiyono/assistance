@@ -74,7 +74,7 @@ export function DiffPreview({ projectPath, filePath, title }: DiffPreviewProps) 
           readOnly: true,
           renderSideBySide: true,
           minimap: { enabled: false },
-          fontSize: 13,
+          fontSize: 11,
           scrollBeyondLastLine: false,
           hideUnchangedRegions: { enabled: true },
         }}

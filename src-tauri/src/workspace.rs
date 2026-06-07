@@ -92,6 +92,28 @@ pub fn git_diff_content(project_path: String, file_path: String) -> Result<GitDi
 }
 
 #[tauri::command]
+pub fn git_branch(path: String) -> Result<String, String> {
+    let output = Command::new("git")
+        .arg("rev-parse")
+        .arg("--abbrev-ref")
+        .arg("HEAD")
+        .current_dir(&path)
+        .output()
+        .map_err(|e| e.to_string())?;
+
+    if !output.status.success() {
+        return Err("not a git repository".to_string());
+    }
+
+    let branch = String::from_utf8_lossy(&output.stdout).trim().to_string();
+    if branch.is_empty() {
+        return Err("not a git repository".to_string());
+    }
+
+    Ok(branch)
+}
+
+#[tauri::command]
 pub fn git_status(path: String) -> Result<Vec<GitStatusEntry>, String> {
     let output = Command::new("git")
         .arg("status")

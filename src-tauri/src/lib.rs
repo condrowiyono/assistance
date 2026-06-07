@@ -4,7 +4,7 @@ mod workspace;
 
 use claude_chat::{kill_claude_chat, send_claude_chat_message, spawn_claude_chat, ClaudeChatState};
 use terminal::{kill_terminal, resize_terminal, spawn_terminal, write_to_terminal, PtyState};
-use workspace::{git_diff_content, git_status, list_directory, read_file};
+use workspace::{git_branch, git_diff_content, git_status, list_directory, read_file};
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
@@ -24,6 +24,7 @@ pub fn run() {
             kill_claude_chat,
             list_directory,
             git_status,
+            git_branch,
             read_file,
             git_diff_content
         ])
